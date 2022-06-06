@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no' />
+    <link rel="stylesheet" href="static\css\loginstyle.css">
+
+    <title>obeta</title>
+
+</head>
+<body>
+    <div class="container" style = "margin-top: 300px">
+        <section id="content">
+            <form method="POST" action="/register">
+            <h1>회원가입</h1>
+            <div>
+                <input style = "margin-bottom: 30px" type="text" id="userid" placeholder="아이디" name="userid"/>
+            </div>
+            <div>
+                <input style = "margin-bottom: 30px" type="password" id="password" placeholder="비밀번호" name="password"/>
+            </div>
+            <div>
+                <input type="password" id="re_password" placeholder="비밀번호 확인" name="re_password"/>
+            </div>
+            <div>
+                <input type="radio" value = "남" id="gender" placeholder="성별" name="gender"/> 남
+                <input type="radio" value = "여" id="gender" placeholder="성별" name="gender"/> 여
+            </div>
+            <div>
+                <input type="button" onclick="test();" value="테스트">
+            </div>
+            <div>
+              <input id = "submit1" style = "display: none" type="submit" value="제출"  />
+              <!--<a href="#">Lost your password?</a>
+              <a href="#">Register</a>-->
+            </div>
+          </form>
+          
+        </section>
+      </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+    function test() {
+      var p1 = document.getElementById('password').value;
+      var p2 = document.getElementById('re_password').value;
+      if( p1 != p2 ) {
+        alert("비밀번호가 일치 하지 않습니다");
+        return false;
+      } else{
+        alert("비밀번호가 일치합니다");
+        $("#submit1").css("display","block");
+        return true;
+      }
+
+    }
+</script>
+</html>
